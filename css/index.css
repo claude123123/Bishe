@@ -1,0 +1,141 @@
+.bs-slider{
+    overflow:hidden;
+    height:100vh;
+    position:relative;
+    background:#000;
+    
+}
+.bs-slider:hover{
+    cursor:-moz-grab;
+    cursor:-webkit-grab;
+}
+.bs-slide:active{
+    cursor:-moz-grabbing;
+    cursor:-webkit-grabbing;
+}
+
+.bs-slider .bs-slider-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.40);
+}
+.bs-slider > .carousel-inner > .item > img,
+.bs-slider > .carousel-inner > .item > a > img{
+    margin:auto;
+    width:100% !important;
+    
+}
+
+
+/*slide effect*/
+.fade{
+    opacity:1;
+}
+.fade .item{
+    top:0;
+    z-index:1;
+    opacity:0;
+    width:100%;
+    position:absolute;
+    left:0 !important;
+    display: block !important;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+.fade .item:first-child{
+    top:auto;
+    position:relative;
+}
+.fade .item.active{
+    opacity:1;
+    z-index: 2;
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -ms-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition:opacity ease-in-out 1s;
+}
+
+
+
+
+/*文字部分*/
+.slide_style_left{
+    text-align: left !important;
+}
+.slide_style_right{
+    text-align: right !important;
+}
+.slide_style_center{
+    text-align: center !important;
+}
+
+.slide-text{
+    left:0;
+    top:25%;
+    right:0;
+    margin:auto;
+    padding:10px;
+    position:absolute;
+    text-align: left;
+    padding:10px 45px;
+}
+
+.slide-text >h1{
+    padding:0;
+    color:#fff;
+    font-size: 70px;
+    font-style:normal;
+    line-height: 84px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    display:inline-block;
+    animation-delay: 0.7s;
+}
+.slide-text >p{
+    padding:0;
+    color:#fff;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    animation-delay: 1.1s;
+}
+
+.index-button{
+    position:fixed;
+    bottom:15%;
+    width:90%;
+}
+.index-button a{
+    font-size: 30px;
+    color:#fff;
+    text-decoration: none;
+    display:inline-block;
+    width:45%;
+    height:60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 10px;
+
+}
+
+.index-button .reg{
+    border:2px solid #019ae4;
+    background:#019AE4;
+    position:absolute;
+    left:60%;
+}
+.index-button .log{
+    
+    border:2px solid #fff;
+    position:absolute;
+    left:5%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content='width=device-width,initial-scale=1.0' />
+        <title>Start</title>
+        <link rel="stylesheet" href="css/index.css" media='all' />
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div id="bootstrap-touch-slider" class="carousel bs-slider control-round indicators-line" data-ride='carousel' data-pause='hover' data-interval='false'>
+            <div class="carousel-inner" role='listbox'>
+                <div class="item active">
+                    <img src="images/slide1.png" class="slide-image" alt="" />
+                    <div class="bs-slider-overlay"></div>
+                    <div class="slide-text slide_style_left">
+                        <h1 data-animation='animated zommInRight'>Gallery</h1>
+                        <p data-animation='animated fadeInLeft'>上传您的最佳照片</p>
+                    </div>
+                    
+                </div>
+
+                 <div class="item">
+                    <img src="images/slide2.png" class="slide-image" alt="" />
+                    <div class="bs-slider-overlay"></div>
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation='animated flipInX'>Gallery</h1>
+                        <p data-animation='animated lightSpeedIn'>将最佳照片整理成册</p>
+                    </div>
+                </div>
+
+                 <div class="item">
+                    <img src="images/slide3.png" class="slide-image" alt="" />
+                    <div class="bs-slider-overlay"></div>
+                    <div class="slide-text slide_style_right">
+                        <h1 data-animation='animated zoomInLeft'>Gallery</h1>
+                        <p data-animation='animated fadeInRight'>建设最美回忆</p>
+                    </div>
+                      
+                </div>
+            </div>
+            <div class="index-button">
+                
+                <a href="#" class="log">登录</a>
+                <a href="#" class="reg">注册</a>
+            </div>
+        </div>
+        
+        
+        
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.touchSwipe.min.js"></script>
+        <script src="js/bootstrap-touch-slider.js"></script>
+        <script>
+            $('#bootstrap-touch-slider').bsTouchSlider();
+        </script>
+    </body>
+</html>
