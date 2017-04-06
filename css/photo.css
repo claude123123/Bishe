@@ -70,7 +70,10 @@ header{
 .nnav a:nth-child(2){
     
 }
-.photo-img img{
+.photo-img ul{
+    list-style: none;
+}
+.photo-img ul li img{
     width:50%;
     float:left;
 }

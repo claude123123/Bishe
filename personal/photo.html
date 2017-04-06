@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/photo.css" />
+        <link rel="stylesheet" href="../css/viewer.min.css" />
+
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script src="../js/jquery.touchSwipe.min.js"></script>
+        <script src="../js/photo-html.js"></script>
+        <script src="../js/viewer-jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -26,15 +32,18 @@
             </div>
         </header>
         <section class='nnav'>
-            <a href="#">照片</a>
-            <a href="#">相册</a>
+            <a href="#" class="nnav-photo">照片</a>
+            <a href="#" class="nnav-ablum">相册</a>
         </section>
         <div class="photo-img">
-            <img src="../photo/_DSC3887-2.jpg" alt="" />
-            <img src="../photo/_DSC3842-1.jpg" alt="" />
-            <img src="../photo/_DSC3921-1.jpg" alt="" />
-            <img src="../photo/_DSC3942-1.jpg" alt="" />
-            <img src="../photo/_DSC3930-1.jpg" alt="" />
+            <ul class="ul-images">
+                <li><img src="../photo/_DSC3887-2.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3842-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3921-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3942-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3930-1.jpg" alt="" /></li>
+            </ul>
+            
         </div>
         <div class="ablum">
             <div class="ablum-cover">
@@ -48,7 +57,7 @@
                 <p>x张照片</p>
             </div>
         </div>
-        <nav>
+        <nav class="footer-nav">
             <div>
                 <a href="#"><span class="glyphicon glyphicon-home"></span></a>
                 <a href="#"><span class="glyphicon glyphicon-camera"></span></a>
