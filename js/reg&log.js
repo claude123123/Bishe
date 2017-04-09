@@ -18,13 +18,29 @@ $(document).ready(function(){
                     dataType:'json',
                     data:cont,
                     success:function(data){
-                        $('#tishi').html(data);
+                        $('#rtishi').html(data);
                     }
 
                 })
-                
-                
-            });
+            })
+
+            $('#log-btn').click(function(){
+                var cont = $('#log-table input').serialize();
+                $.ajax({
+                    url:"log-act.php",
+                    type:'post',
+                    datatype:'json',
+                    data:cont,
+                    success:function(data){
+                        if(data==1){
+                            $(location).attr('href', 'personal/photo.html');
+                        }else{
+                            var str='用户名或密码错误';
+                            $('#ltishi').html(str);
+                        }
+                    }
+                })
+            })
 
 
 
