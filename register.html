@@ -5,25 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/reg&log.css" />
+        <script src="js/jquery-3.1.1.min.js"></script>
     </head>
     <body>
     <div>
         <div class="topbar">
-            <p><a href="index.html"><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></a></span>  注册</p>
+            <p><a href="index.html"><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></a></span>  返回</p>
         </div>
         <div class="reg-nav">
-            <a href="login.html">登录</a>
-            <a href="#">注册</a>
+            <a href="#" id="reg-nav-log">登录</a>
+            <a href="#" id="reg-nav-reg">注册</a>
         </div>
-        <div class="reg-form">
-            <form action="">
+        <div class="reg-form" id="reg-table">
+            <div class="form">
                 <h2>登录或注册</h2>
-                <input type="text" class="text" placeholder='邮箱地址' />
-                <input type="password" class="text" placeholder='创建密码' />
-                <input type="password" class="text" placeholder='确认密码' />
-                <input type="submit" value="我要注册!" class="btn-sub" />
-            </form>
+                <input type="text" class="text" id="rusername" name="rusername" placeholder='用户名' />
+                <input type="password" class="text" id="rpassword" name="rpassword" placeholder='创建密码' />
+                <input type="password" class="text" id="rrepassword" name="rrepassword" placeholder='确认密码' />
+                <button id="reg-btn" class="btn-sub">我要注册</button>
+                <p id="tishi"></p>
+            </div>
         </div>
+        <div class="reg-form" id="log-table">
+            <div class="form">
+                <h2>登录或注册</h2>
+                <input type="text" class="text" id="lname" placeholder='邮箱地址' />
+                <input type="password" class="text" id="lpassword" placeholder='密码' />
+                <input type="button" value="登录" id="log-btn" class="btn-sub" />
+                <a href="personal/photo.html">登录后页面</a>
+            </div>
+        </div>
+
     </div>
+
+    <script src="js/reg&log.js"></script>
     </body>
 </html>
