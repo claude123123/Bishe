@@ -96,21 +96,37 @@ nav div a span{
     font-size: 40px;
 }
 
-.ablum{
+.album{
     width:100%;
     background:#eee;
     padding-top: 20px;
 }
-.ablum-cover{
+.album-cover{
     width:80%;
     background:#fff;
     border:1px solid #ccc;
     margin:0 auto 20px;
 }
-.ablum-cover img{
+.album-cover img{
     width:100%;
 }
-.ablum-cover p{
+.album-cover p{
     text-align:center;
     color:#888;
+}
+
+.add-album{
+    
+    
+    width:100px;
+    height:100px;
+    margin:30px auto 100px;
+    text-align: center;
+    
+
+}
+.add-album{
+    font-size: 50px;
+    line-height: 50px;
+    border-radius: 50px;
 }

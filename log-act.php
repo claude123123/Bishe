@@ -11,7 +11,9 @@
         if($username==$row['username']&&$password==$row['password']){
             session_start();
             $_SESSION['username']=$username;
+
             echo 1;
+            
         }else{
             echo 0;
         }

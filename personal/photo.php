@@ -1,0 +1,85 @@
+<?php  
+    session_start();
+    if(isset($_SESSION['username']))
+    {
+            echo "用户名".$_SESSION['username'];
+    }
+    else
+    {
+        echo "未登录";
+    }
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/photo.css" />
+        <link rel="stylesheet" href="../css/viewer.min.css" />
+
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script src="../js/jquery.touchSwipe.min.js"></script>
+        <script src="../js/photo-html.js"></script>
+        <script src="../js/viewer-jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="bground">
+                <img src="../photo/_DSC3842-1.jpg"  alt="" />
+            </div>
+            <div class="avatar">
+                <img src="../photo/_DSC3885-1.jpg" alt="头像" class="img-circle" />
+            </div>
+            <div class="p-menu">
+                <a href="../index.html" class="btn btn-lg"><span class='glyphicon glyphicon-remove-sign'></span></a>
+                <a href="#" class="btn btn-lg">编辑个人信息</a>
+                <a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-info-sign"></span></a>
+                
+                
+            </div>
+            <div class="u-name">
+            <?php echo "<p>".$_SESSION['username']."</p>"; ?>
+            </div>
+        </header>
+        <section class='nnav'>
+            <a href="#" class="nnav-photo">照片</a>
+            <a href="#" class="nnav-album">相册</a>
+        </section>
+        <div class="photo-img">
+            <ul class="ul-images">
+                <li><img src="../photo/_DSC3887-2.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3842-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3921-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3942-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3930-1.jpg" alt="" /></li>
+            </ul>
+            
+        </div>
+        <div class="album">
+            <div class="album-cover">
+                <img src="../photo/_DSC3922-1.jpg"  alt="" />
+                <p>相册名字</p>
+                <p>x张照片</p>
+            </div>
+            <div class="album-cover">
+                <img src="../photo/_DSC3922-1.jpg"  alt="" />
+                <p>相册名字</p>
+                <p>x张照片</p>
+            </div>
+            <div class="add-album">
+                <a href="addalbum.php"><span class="glyphicon glyphicon-plus"></span></a>
+            </div>
+            
+        </div>
+        <nav class="footer-nav">
+            <div>
+                <a href="../personal/home.php"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-camera"></span></a>
+                <a href="../personal/photo.html"><span class="glyphicon glyphicon-user"></span></a>
+            </div>
+        </nav>
+    </body>
+</html>

@@ -13,14 +13,14 @@
 $(document).ready(function(){
 
     // 照片相册界面切换
-    $(".ablum").hide();
-    $('.nnav-ablum').click(function(event) {
+    $(".album").hide();
+    $('.nnav-album').click(function(event) {
         $(".photo-img").hide();
-        $(".ablum").show();
+        $(".album").show();
     });
     $('.nnav-photo').click(function(event) {
         $(".photo-img").show();
-        $(".ablum").hide();
+        $(".album").hide();
     });
     $('.ul-images').viewer();
     $('.img-container').viewer();

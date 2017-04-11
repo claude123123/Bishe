@@ -33,7 +33,7 @@ $(document).ready(function(){
                     data:cont,
                     success:function(data){
                         if(data==1){
-                            $(location).attr('href', 'personal/photo.html');
+                            $(location).attr('href', 'personal/photo.php');
                         }else{
                             var str='用户名或密码错误';
                             $('#ltishi').html(str);
