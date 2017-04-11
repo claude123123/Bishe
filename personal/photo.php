@@ -50,11 +50,25 @@
         </section>
         <div class="photo-img">
             <ul class="ul-images">
-                <li><img src="../photo/_DSC3887-2.jpg" alt="" /></li>
+                <!-- <li><img src="../photo/_DSC3887-2.jpg" alt="" /></li>
                 <li><img src="../photo/_DSC3842-1.jpg" alt="" /></li>
                 <li><img src="../photo/_DSC3921-1.jpg" alt="" /></li>
                 <li><img src="../photo/_DSC3942-1.jpg" alt="" /></li>
-                <li><img src="../photo/_DSC3930-1.jpg" alt="" /></li>
+                <li><img src="../photo/_DSC3930-1.jpg" alt="" /></li> -->
+                <?php 
+                    $username=$_SESSION['username'];
+                    $conn = mysqli_connect('localhost','root','','bishe');
+                    $sql="SELECT photodir FROM photo WHERE username='$username'";
+                    
+                    $result = mysqli_query($conn,$sql);
+                    
+                    while ( $row=mysqli_fetch_array($result) ) {
+                       
+                        echo "<li><img src='".$row['photodir']."'/></li>";
+                     }
+
+
+                 ?>
             </ul>
             
         </div>
@@ -76,9 +90,9 @@
         </div>
         <nav class="footer-nav">
             <div>
-                <a href="../personal/home.php"><span class="glyphicon glyphicon-home"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-camera"></span></a>
-                <a href="../personal/photo.html"><span class="glyphicon glyphicon-user"></span></a>
+                <a href="home.php"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="addimg.php"><span class="glyphicon glyphicon-camera"></span></a>
+                <a href="photo.php"><span class="glyphicon glyphicon-user"></span></a>
             </div>
         </nav>
     </body>

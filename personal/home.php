@@ -47,7 +47,7 @@
         </div>
         <nav class="footer-nav">
             <div>
-                <a href="../personal/home.html"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="../personal/home.php"><span class="glyphicon glyphicon-home"></span></a>
                 <a href="#"><span class="glyphicon glyphicon-camera"></span></a>
                 <a href="../personal/photo.php"><span class="glyphicon glyphicon-user"></span></a>
             </div>
