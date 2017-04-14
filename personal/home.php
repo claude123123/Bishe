@@ -27,7 +27,9 @@
     <body>
         <div class="img-wall">
             <ul class="img-container">
-                <li>
+
+
+                <!-- <li>
                     <img src="../photo/_DSC3887-2.jpg"  alt="" />
                     <h2>照片描述或感触</h2>
                     <p>作者名</p>
@@ -41,7 +43,23 @@
                     <img src="../photo/_DSC3921-1.jpg"  alt="" />
                     <h2>照片描述或感触</h2>
                     <p>作者名</p>
-                </li>
+                </li> -->
+                <?php 
+                    $username=$_SESSION['username'];
+                    $conn = mysqli_connect('localhost','root','','bishe');
+                    $sql="SELECT photodir,username,photodis FROM photo";
+                    
+                    $result = mysqli_query($conn,$sql);
+                    
+                    while ( $row=mysqli_fetch_array($result) ) {
+                       
+                        echo "<li><img src='".$row['photodir']."'/><h2>".$row['photodis']."</h2><p>".$row['username']."</p></li>";
+                        
+                        
+                     }
+
+
+                 ?>
             </ul>
             
         </div>

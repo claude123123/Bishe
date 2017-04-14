@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+}
+h2{
+   text-align: center;
+   background:#eee;
+   height:100px;
+   line-height: 100px;
+   margin:0 auto;
+}
+form{
+    height:65vh;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   height: 34px;
+   border-radius: 20px;
+}
+form input{
+    background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   height: 34px;
+   border-radius: 20px;
+   border: 1px solid #aaa;
+}
+
+.upload-btn{
+    background:#019AE4;
+    color:#fff;
+}

@@ -73,7 +73,25 @@
             
         </div>
         <div class="album">
-            <div class="album-cover">
+            <?php 
+                $sql1="SELECT albumname FROM album WHERE username='$username'";
+                $result1=mysqli_query($conn,$sql1);
+                
+                
+                while($row1=mysqli_fetch_array($result1)){
+                    $albumname=$row1['albumname'];
+                    $sql2 = "SELECT photodir from photo where albumname='$albumname' and username='$username'";
+                    $result2 = mysqli_query($conn,$sql2);
+                    $row2=mysqli_fetch_array($result2);
+                    echo "<div class='album-cover'> 
+                            <img src='".$row2['photodir']." '  />
+                            <p>".$row1['albumname']."</p></div>";
+                }
+
+             ?>
+
+
+            <!-- <div class="album-cover">
                 <img src="../photo/_DSC3922-1.jpg"  alt="" />
                 <p>相册名字</p>
                 <p>x张照片</p>
@@ -82,7 +100,7 @@
                 <img src="../photo/_DSC3922-1.jpg"  alt="" />
                 <p>相册名字</p>
                 <p>x张照片</p>
-            </div>
+            </div> -->
             <div class="add-album">
                 <a href="addalbum.php"><span class="glyphicon glyphicon-plus"></span></a>
             </div>

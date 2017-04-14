@@ -16,7 +16,7 @@
    
 
     $conn=mysqli_connect('localhost','root','','bishe');
-    $sql_select_album="select albumname,albumdir from album where albumname = '$dealbum'";
+    $sql_select_album="select albumname,albumdir from album where albumname = '$dealbum' and username='$username'";
     $ret_album = mysqli_query($conn,$sql_select_album);
     $row_album = mysqli_fetch_array($ret_album);
 
@@ -49,19 +49,18 @@
             echo "错误：".$_FILES["file"]["error"]."<br>";
         }
         else{
-            echo "上传文件名：".$_FILES["file"]["name"]."<br>";
-            echo "文件类型:".$_FILES["file"]["type"]."<br>";
-            echo "文件临时存储的位置:".$_FILES["file"]["tmp_name"]."<br>";
+            
         }
         if(file_exists("../album/".$username."/".$albumdir."/".$_FILES["file"]["name"])){
             echo $_FILES["file"]["name"]."文件已存在";
+            echo "<br/><a href='photo.php'>返回</a>";
         }else{
-            
             $sql_insert="insert into photo(albumname,username,photoname,photodis,photodir,photodate) values('$albumname','$username','$photoname','$photodis','$photodir',now())";
             mysqli_query($conn,$sql_insert);
             move_uploaded_file($_FILES["file"]["tmp_name"],"../album/".$username."/".$albumdir."/".iconv("UTF-8","gbk",$_FILES["file"]["name"]));
             echo "上传成功";
             echo "文件名：".$_FILES['file']['name'];
+            echo "<br/><a href='photo.php'>返回</a>";
         }
         
 
@@ -73,16 +72,16 @@
 
 ?>
 
-<?php 
-    $dir="../album/"."$username"."/"."$albumdir"."/";
-    echo "显示目录下所有文件";
-    if(is_dir($dir)){
-        if($dh=opendir($dir)){
-            while(($file=readdir($dh))!=false){
-                $filepath=$dir.$file;
-                echo "<img src='".$filepath."'/>";
-            }
-        }
-    }
+<!-- // <?php 
+//     $dir="../album/"."$username"."/"."$albumdir"."/";
+//     echo "显示目录下所有文件";
+//     if(is_dir($dir)){
+//         if($dh=opendir($dir)){
+//             while(($file=readdir($dh))!=false){
+//                 $filepath=$dir.$file;
+//                 echo "<img src='".$filepath."'/>";
+//             }
+//         }
+//     }
 
- ?>
+//  ?> -->

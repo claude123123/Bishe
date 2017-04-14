@@ -14,11 +14,13 @@
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/addimg.css" />
 </head>
 <body>
+    <h2>选择照片</h2>
     <form action="addimg-act.php" method="post" enctype="multipart/form-data">
         <input type="file" name="file" id="file" />
-        <input type="text" name="photodis" id="photodis" />
+        <input type="text" name="photodis" id="photodis" placeholder="请输入照片描述" />
         <select name="dealbum" id="dealbum">
             <?php 
                 $username=$_SESSION['username'];
@@ -36,7 +38,7 @@
              ?>
         </select>
         
-        <input type="submit" name="submit" value="确定" />
+        <input type="submit" class="upload-btn" name="submit" value="确定" />
     </form>
 </body>
 </html>
