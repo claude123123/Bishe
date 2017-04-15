@@ -72,10 +72,29 @@ header{
 }
 .photo-img ul{
     list-style: none;
+    display:flex;
+    flex-flow: row wrap;
 }
-.photo-img ul li img{
+.photo-img ul li{
+    height:150px;
     width:50%;
     float:left;
+}
+.photo-img ul li img{
+    height:100%;
+    min-width: 100%;
+    max-width: 100%;    
+}
+.photo-img ul li a{
+    height:20%;
+    display:none;
+    width:20px;
+    border:2px solid #aaa;
+    margin:0 auto;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 1s;
+    text-align: center;
 }
 
 nav{
@@ -113,6 +132,17 @@ nav div a span{
 .album-cover p{
     text-align:center;
     color:#888;
+}
+.album-cover a{
+    height:30px;
+    display:none;
+    width:30px;
+    border:2px solid #aaa;
+    margin:0 auto;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 1s;
+    text-align: center;
 }
 
 .add-album{

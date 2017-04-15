@@ -35,8 +35,8 @@
             </div>
             <div class="p-menu">
                 <a href="../index.html" class="btn btn-lg"><span class='glyphicon glyphicon-remove-sign'></span></a>
-                <a href="#" class="btn btn-lg">编辑个人信息</a>
-                <a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-info-sign"></span></a>
+                <a href="#2" class="btn btn-lg" id="delete-act">照片管理</a>
+                <a href="#2" class="btn btn-lg"><span class="glyphicon glyphicon-info-sign"></span></a>
                 
                 
             </div>
@@ -45,36 +45,34 @@
             </div>
         </header>
         <section class='nnav'>
-            <a href="#" class="nnav-photo">照片</a>
-            <a href="#" class="nnav-album">相册</a>
+            <a href="#2" class="nnav-photo">照片</a>
+            <a href="#2" class="nnav-album">相册</a>
         </section>
         <div class="photo-img">
             <ul class="ul-images">
-                <!-- <li><img src="../photo/_DSC3887-2.jpg" alt="" /></li>
-                <li><img src="../photo/_DSC3842-1.jpg" alt="" /></li>
-                <li><img src="../photo/_DSC3921-1.jpg" alt="" /></li>
-                <li><img src="../photo/_DSC3942-1.jpg" alt="" /></li>
-                <li><img src="../photo/_DSC3930-1.jpg" alt="" /></li> -->
-                <?php 
-                    $username=$_SESSION['username'];
-                    $conn = mysqli_connect('localhost','root','','bishe');
-                    $sql="SELECT photodir FROM photo WHERE username='$username'";
-                    
-                    $result = mysqli_query($conn,$sql);
-                    
-                    while ( $row=mysqli_fetch_array($result) ) {
-                       
-                        echo "<li><img src='".$row['photodir']."'/></li>";
-                     }
+                <!-- <li><img src="../photo/_DSC3887-2.jpg" alt="" /><a href="#2" id="$row['photodir']">X</a></li>
+                <li><img src="../photo/_DSC3842-1.jpg" alt="" /><a href="#2">X</a></li>
+                <li><img src="../photo/_DSC3921-1.jpg" alt="" /><a href="#2">X</a></li>
+                <li><img src="../photo/_DSC3942-1.jpg" alt="" /><a href="#2">X</a></li>
+                <li><img src="../photo/_DSC3930-1.jpg" alt="" /><a href="#2">X</a></li> -->
+            <?php 
+                $username=$_SESSION['username'];
+                $conn = mysqli_connect('localhost','root','','bishe');
+                $sql="SELECT photodir FROM photo WHERE username='$username'";
+                
+                $result = mysqli_query($conn,$sql);
+                
+                while ( $row=mysqli_fetch_array($result) ) {
 
-
-                 ?>
+                    echo "<li><img src='".$row['photodir']."'/><a href='#2' id='".$row['photodir']."'>X</a></li>";
+                 }
+             ?>
             </ul>
             
         </div>
         <div class="album">
-            <?php 
-                $sql1="SELECT albumname FROM album WHERE username='$username'";
+           <?php 
+                $sql1="SELECT albumname,albumdir FROM album WHERE username='$username'";
                 $result1=mysqli_query($conn,$sql1);
                 
                 
@@ -85,21 +83,21 @@
                     $row2=mysqli_fetch_array($result2);
                     echo "<div class='album-cover'> 
                             <img src='".$row2['photodir']." '  />
-                            <p>".$row1['albumname']."</p></div>";
+                            <p>".$row1['albumname']."</p><a href='#2' id='".$row1['albumdir']."'>X</a></div>";
                 }
 
-             ?>
+            ?>
 
 
             <!-- <div class="album-cover">
                 <img src="../photo/_DSC3922-1.jpg"  alt="" />
                 <p>相册名字</p>
-                <p>x张照片</p>
+                <a href="#2">X</a>
             </div>
             <div class="album-cover">
                 <img src="../photo/_DSC3922-1.jpg"  alt="" />
                 <p>相册名字</p>
-                <p>x张照片</p>
+                <a href="#2">X</a>
             </div> -->
             <div class="add-album">
                 <a href="addalbum.php"><span class="glyphicon glyphicon-plus"></span></a>
@@ -113,5 +111,6 @@
                 <a href="photo.php"><span class="glyphicon glyphicon-user"></span></a>
             </div>
         </nav>
+        <script src="../js/deleteimg.js"></script>
     </body>
 </html>

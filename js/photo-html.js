@@ -17,10 +17,12 @@ $(document).ready(function(){
     $('.nnav-album').click(function(event) {
         $(".photo-img").hide();
         $(".album").show();
+         $('#delete-act').html("相册管理");
     });
     $('.nnav-photo').click(function(event) {
         $(".photo-img").show();
         $(".album").hide();
+        $('#delete-act').html("照片管理");
     });
     $('.ul-images').viewer();
     $('.img-container').viewer();

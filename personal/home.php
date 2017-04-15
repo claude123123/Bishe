@@ -2,11 +2,11 @@
     session_start();
     if(isset($_SESSION['username']))
     {
-            echo "用户名".$_SESSION['username'];
+            // echo "用户名".$_SESSION['username'];
     }
     else
     {
-        echo "未登录";
+        // echo "未登录";
     }
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
         <nav class="footer-nav">
             <div>
                 <a href="../personal/home.php"><span class="glyphicon glyphicon-home"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-camera"></span></a>
+                <a href="addimg.php"><span class="glyphicon glyphicon-camera"></span></a>
                 <a href="../personal/photo.php"><span class="glyphicon glyphicon-user"></span></a>
             </div>
         </nav>
