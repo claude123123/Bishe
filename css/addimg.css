@@ -2,6 +2,13 @@
     margin:0;
     padding:0;
 }
+.topbar{
+  margin-left: 20px;
+  font-size: 20px;
+  position: absolute;
+  line-height: 100px;
+  top:0px;
+}
 h2{
    text-align: center;
    background:#eee;
@@ -27,16 +34,54 @@ select {
    border-radius: 20px;
 }
 form input{
-    background: transparent;
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   height: 34px;
-   border-radius: 20px;
-   border: 1px solid #aaa;
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  height: 34px;
+  border-radius: 20px;
+  border: 1px solid #aaa;
 }
-
+.share{
+  background: transparent;
+  width: 100px;
+  padding: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  height: 30px;
+}
+label span{
+  line-height: 30px;
+  height:30px;
+}
 .upload-btn{
     background:#019AE4;
     color:#fff;
 }
+
+.red{
+  background:red;
+  color:white;
+}
+.green{
+  background:rgb(52, 192, 73);
+  color:white;
+}
+#goback{
+  display:block;
+  text-decoration: none;
+  text-align: center;
+  color:white;
+  width:150px;
+  line-height: 60px;
+  font-size: 30px;
+  height:60px;
+  border:2px solid #019ae4;
+  background:#019AE4;
+  border-radius: 20px;
+  position:relative;
+  top:40%;
+  margin:0 auto;
+}
+
+    

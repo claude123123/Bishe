@@ -1,0 +1,64 @@
+#album-input{
+    height:65vh;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#album-input input{
+    width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   height: 34px;
+   border-radius: 20px;
+   border: 1px solid #aaa;
+}
+
+#addalbum-btn{
+     background:#019AE4;
+    color:#fff;
+}
+.topbar{
+  margin-left: 20px;
+  font-size: 20px;
+  position: absolute;
+  line-height: 100px;
+  top:0px;
+}
+h2{
+   text-align: center;
+   background:#eee;
+   height:100px;
+   line-height: 100px;
+   margin:0 auto;
+}
+.ctishi{
+  width:100%;
+  position:relative;
+  height:100vh;
+}
+h3{
+   text-align: center;
+   height:100px;
+   line-height: 100px;
+   margin:0 auto;
+   background:rgb(52, 192, 73);
+   color:white;
+}
+.goback{
+  display:block;
+  text-decoration: none;
+  text-align: center;
+  color:white;
+  width:150px;
+  line-height: 60px;
+  font-size: 30px;
+  height:60px;
+  border:2px solid #019ae4;
+  background:#019AE4;
+  border-radius: 20px;
+  position:relative;
+  top:40%;
+  margin:0 auto;
+}

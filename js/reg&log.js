@@ -9,7 +9,7 @@ $(document).ready(function(){
                 $('#reg-table').show();
             });
 
-
+            // 注册ajax
             $('#reg-btn').click(function() {
                 var cont = $('#reg-table input').serialize();
                 $.ajax({
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
                 })
             })
-
+            // 登录ajax
             $('#log-btn').click(function(){
                 var cont = $('#log-table input').serialize();
                 $.ajax({
@@ -41,7 +41,4 @@ $(document).ready(function(){
                     }
                 })
             })
-
-
-
         });

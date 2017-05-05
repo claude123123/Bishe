@@ -22,27 +22,28 @@ $(document).ready(function(){
         })
         $('.ul-images li a').click(function(){
             var photodir = $(this).attr('id');
-            alert(photodir);
+           
             $.ajax({
                 url:"../personal/deleteimg-act.php",
                 type:'post',
                 datatype:'json',
                 data:{"data":photodir},
                 success:function(data){
-                    alert(data);
+                    alert('删除成功');
+                    window.location.reload();
                 }
             })
         })
         $('.album-cover a').click(function(){
             var albumdir = $(this).attr('id');
-            alert(albumdir);
             $.ajax({
                 url:"../personal/deletealbum-act.php",
                 type:'post',
                 datatype:'json',
                 data:{"data":albumdir},
                 success:function(data){
-                    alert(data);
+                    alert('删除成功');
+                    window.location.reload();
                 }
             })
         })

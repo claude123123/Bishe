@@ -2,11 +2,11 @@
     session_start();
     if(isset($_SESSION['username']))
     {
-            echo "用户名".$_SESSION['username'];
+          
     }
     else
     {
-        echo "未登录状态";
+        
     }
 ?>
 <!DOCTYPE html>
@@ -14,26 +14,40 @@
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/addalbum.css" />
     <script src="../js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-    <h1>创建相册</h1>
+    <div class="topbar">
+            <p><a href="photo.php"><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></a></span>  返回</p>
+
+    </div>
+    <h2 id="ctitle">创建相册</h2>
     <div id="album-input">
         <input type="text" id="albumname" name="albumname" placeholder="请输入相册名" />
         <input type="text" id="albumdis" name="albumdis" placeholder="相册简介" />
         <input type="submit" value="创建相册" id="addalbum-btn"/>
     </div>
+    <div class="ctishi">
+       <!--  <h3 id="ctishi"></h3>
+        <a href="../personal/photo.php" class="goback">返回</a> -->
+    </div>
     <script>
     $(document).ready(function(){
         $('#addalbum-btn').click(function(){
             var cont = $('#album-input input').serialize();
-            alert(cont);
+            
             $.ajax({
                 url:"addalbum-act.php",
                 type:'post',
                 dataType:'json',
                 data:cont,
                 success:function(data){
+                    $('#album-input').hide();
+                    $('#ctitle').hide();
+                    $('.topbar').hide();
+                    $('.ctishi').html("<h3 id='ctishi'>"+data+"</h3><a href='../personal/photo.php' class='goback'>返回</a>");
                     
                 }
             })

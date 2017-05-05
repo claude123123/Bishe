@@ -1,20 +1,19 @@
+<link rel="stylesheet" href="../css/addimg.css" />
 <?php  
     session_start();
     if(isset($_SESSION['username']))
     {
-            echo "用户名".$_SESSION['username'];
     }
     else
     {
-        echo "未登录";
+        
     }
     $username=$_SESSION['username'];
-
     $photoname = $_FILES['file']['name'];
     $photodis = $_POST['photodis'];
     $dealbum = $_POST['dealbum'];
-   
-
+    $wshare = $_POST['share'];
+    
     $conn=mysqli_connect('localhost','root','','bishe');
     $sql_select_album="select albumname,albumdir from album where albumname = '$dealbum' and username='$username'";
     $ret_album = mysqli_query($conn,$sql_select_album);
@@ -27,61 +26,49 @@
     $photodir = "../album/".$username."/".$albumdir."/".$_FILES["file"]["name"];
 
 
-?>
 
-<?php 
-    if($_FILES["file"]["error"]>0){
-        echo "错误：".$_FILES["file"]["error"]."<br>";
-    }
-    else{
 
-    }
- ?>
-
-<?php 
     $allowedExts = array("gif","jpeg","jpg","png");
     $temp = explode(".",$_FILES["file"]["name"]);
-    echo $_FILES["file"]["size"];
+    // echo $_FILES["file"]["size"];
     $extension = end($temp);
     
     if(in_array($extension, $allowedExts)){
         if($_FILES["file"]["error"]>0){
-            echo "错误：".$_FILES["file"]["error"]."<br>";
-        }
-        else{
-            
+            if($_FILES["file"]["error"]==4){
+                echo "<h2 class='red'>未选取图片</h2>";
+            }
+            else{
+                echo "<h2 class='red'>错误：".$_FILES["file"]["error"]."</h2>";
+            }
         }
         if(file_exists("../album/".$username."/".$albumdir."/".$_FILES["file"]["name"])){
-            echo $_FILES["file"]["name"]."文件已存在";
-            echo "<br/><a href='photo.php'>返回</a>";
+            echo "<h2 class='red'>照片已存在</h2>";
+            
         }else{
-            $sql_insert="insert into photo(albumname,username,photoname,photodis,photodir,photodate) values('$albumname','$username','$photoname','$photodis','$photodir',now())";
+            $sql_insert="insert into photo(albumname,username,photoname,photodis,photodir,photodate,share) values('$albumname','$username','$photoname','$photodis','$photodir',now(),'$wshare')";
             mysqli_query($conn,$sql_insert);
             move_uploaded_file($_FILES["file"]["tmp_name"],"../album/".$username."/".$albumdir."/".iconv("UTF-8","gbk",$_FILES["file"]["name"]));
-            echo "上传成功";
-            echo "文件名：".$_FILES['file']['name'];
-            echo "<br/><a href='photo.php'>返回</a>";
+            echo "<h2 class='green'>上传成功</h2>";
+            // echo "文件名：".$_FILES['file']['name'];
         }
         
 
     }
     else{
-        echo "非法的文件格式";
+        echo "<h2 class='red'>非法的文件格式</h2>";
     }
+    echo "<br/><a href='photo.php'  id='goback'>返回</a>";
 
 
-?>
-
-<!-- // <?php 
-//     $dir="../album/"."$username"."/"."$albumdir"."/";
-//     echo "显示目录下所有文件";
-//     if(is_dir($dir)){
-//         if($dh=opendir($dir)){
-//             while(($file=readdir($dh))!=false){
-//                 $filepath=$dir.$file;
-//                 echo "<img src='".$filepath."'/>";
-//             }
-//         }
+// <?php 
+//    $dir="../album/"."$username"."/"."$albumdir"."/";
+//      echo "显示目录下所有文件";
+//      if(is_dir($dir)){
+//          if($dh=opendir($dir)){
+//              while(($file=readdir($dh))!=false){
+//                  $filepath=$dir.$file;
+//                  echo "<img src='".$filepath."'/>";
+//             }         }
 //     }
 
-//  ?> -->

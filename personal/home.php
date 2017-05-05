@@ -17,8 +17,6 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/viewer.min.css" />
         <link rel="stylesheet" href="../css/home.css" />
-
-
         <script src="../js/jquery-3.1.1.min.js"></script>
         <script src="../js/jquery.touchSwipe.min.js"></script>
         <script src="../js/viewer-jquery.min.js"></script>
@@ -27,8 +25,6 @@
     <body>
         <div class="img-wall">
             <ul class="img-container">
-
-
                 <!-- <li>
                     <img src="../photo/_DSC3887-2.jpg"  alt="" />
                     <h2>照片描述或感触</h2>
@@ -47,18 +43,12 @@
                 <?php 
                     $username=$_SESSION['username'];
                     $conn = mysqli_connect('localhost','root','','bishe');
-                    $sql="SELECT photodir,username,photodis FROM photo";
-                    
+                    $sql="SELECT photodir,username,photodis FROM photo WHERE share='y'";  
                     $result = mysqli_query($conn,$sql);
-                    
+                    // 循环遍历输出所有照片
                     while ( $row=mysqli_fetch_array($result) ) {
-                       
                         echo "<li><img src='".$row['photodir']."'/><h2>".$row['photodis']."</h2><p>".$row['username']."</p></li>";
-                        
-                        
                      }
-
-
                  ?>
             </ul>
             

@@ -17,13 +17,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../css/photo.css" />
         <link rel="stylesheet" href="../css/viewer.min.css" />
+        <link rel="stylesheet" href="../css/photo.css" />
 
         <script src="../js/jquery-3.1.1.min.js"></script>
         <script src="../js/jquery.touchSwipe.min.js"></script>
-        <script src="../js/photo-html.js"></script>
         <script src="../js/viewer-jquery.min.js"></script>
+        <script src="../js/photo-html.js"></script>
+        
     </head>
     <body>
         <header>
@@ -55,13 +56,14 @@
                 <li><img src="../photo/_DSC3921-1.jpg" alt="" /><a href="#2">X</a></li>
                 <li><img src="../photo/_DSC3942-1.jpg" alt="" /><a href="#2">X</a></li>
                 <li><img src="../photo/_DSC3930-1.jpg" alt="" /><a href="#2">X</a></li> -->
+
             <?php 
                 $username=$_SESSION['username'];
                 $conn = mysqli_connect('localhost','root','','bishe');
                 $sql="SELECT photodir FROM photo WHERE username='$username'";
                 
                 $result = mysqli_query($conn,$sql);
-                
+                // 循环遍历输出用户所有照片
                 while ( $row=mysqli_fetch_array($result) ) {
 
                     echo "<li><img src='".$row['photodir']."'/><a href='#2' id='".$row['photodir']."'>X</a></li>";
@@ -74,8 +76,7 @@
            <?php 
                 $sql1="SELECT albumname,albumdir FROM album WHERE username='$username'";
                 $result1=mysqli_query($conn,$sql1);
-                
-                
+                // 循环遍历显示所有用户相册
                 while($row1=mysqli_fetch_array($result1)){
                     $albumname=$row1['albumname'];
                     $sql2 = "SELECT photodir from photo where albumname='$albumname' and username='$username'";
@@ -83,7 +84,7 @@
                     $row2=mysqli_fetch_array($result2);
                     echo "<div class='album-cover'> 
                             <img src='".$row2['photodir']." '  />
-                            <p>".$row1['albumname']."</p><a href='#2' id='".$row1['albumdir']."'>X</a></div>";
+                            <p>".$row1['albumname']."</p><a href='#2' id='".$row1['albumdir']."' class='deleteicon'>X</a></div>";
                 }
 
             ?>
