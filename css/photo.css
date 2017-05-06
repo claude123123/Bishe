@@ -4,7 +4,7 @@ body{
 }
 header{
     width:100%;
-    height: 60vh;
+    height: 45vh;
     position:relative;
 }
 .bground{
@@ -76,25 +76,23 @@ header{
     list-style: none;
     display:flex;
     flex-flow: row wrap;
-
+                                               
+}
+.photo-img ul div{
+    height:100px;
+    flex-grow: 1;
 }
 .photo-img ul li{
-    height:150px;
-    width:50%;
+    
 }
 .photo-img ul li img{
-    height:100%;
-    min-width: 100%;
-    max-width: 100%;   
+    height:150px;
+    min-width: 100%;     
+    max-width: 100%;
+    object-fit: cover; 
 }
 
-/*.photo-img ul{
-    list-style: none;
-}
-.photo-img ul li img{
-    width:50%;
-    float:left;
-}*/
+
 
 .photo-img ul li a{
     height:20%;

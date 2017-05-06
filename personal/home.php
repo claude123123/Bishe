@@ -43,7 +43,7 @@
                 <?php 
                     $username=$_SESSION['username'];
                     $conn = mysqli_connect('localhost','root','','bishe');
-                    $sql="SELECT photodir,username,photodis FROM photo WHERE share='y'";  
+                    $sql="SELECT photodir,username,photodis FROM photo WHERE share='y' ORDER BY photoid desc";  
                     $result = mysqli_query($conn,$sql);
                     // 循环遍历输出所有照片
                     while ( $row=mysqli_fetch_array($result) ) {

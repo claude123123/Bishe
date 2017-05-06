@@ -2,7 +2,6 @@
     session_start();
     if(isset($_SESSION['username']))
     {
-            echo "用户名".$_SESSION['username'];
     }
     else
     {
@@ -17,22 +16,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../css/viewer.min.css" />
         <link rel="stylesheet" href="../css/photo.css" />
+        <link rel="stylesheet" href="../css/viewer.min.css" />
 
         <script src="../js/jquery-3.1.1.min.js"></script>
         <script src="../js/jquery.touchSwipe.min.js"></script>
-        <script src="../js/viewer-jquery.min.js"></script>
         <script src="../js/photo-html.js"></script>
+        <script src="../js/viewer-jquery.min.js"></script>
+        
         
     </head>
     <body>
         <header>
             <div class="bground">
-                <img src="../photo/_DSC3842-1.jpg"  alt="" />
+                <img src="../images/backgroundwall.png"  alt="" />
             </div>
             <div class="avatar">
-                <img src="../photo/_DSC3885-1.jpg" alt="头像" class="img-circle" />
+                <img src="../images/avatar.png" alt="头像" class="img-circle" />
             </div>
             <div class="p-menu">
                 <a href="../index.html" class="btn btn-lg"><span class='glyphicon glyphicon-remove-sign'></span></a>
@@ -51,12 +51,14 @@
         </section>
         <div class="photo-img">
             <ul class="ul-images">
-                <!-- <li><img src="../photo/_DSC3887-2.jpg" alt="" /><a href="#2" id="$row['photodir']">X</a></li>
-                <li><img src="../photo/_DSC3842-1.jpg" alt="" /><a href="#2">X</a></li>
-                <li><img src="../photo/_DSC3921-1.jpg" alt="" /><a href="#2">X</a></li>
-                <li><img src="../photo/_DSC3942-1.jpg" alt="" /><a href="#2">X</a></li>
-                <li><img src="../photo/_DSC3930-1.jpg" alt="" /><a href="#2">X</a></li> -->
+                
+                <!-- <div><li><img src="../photo/_DSC3887-2.jpg" alt="" /><a href="#2" id="$row['photodir']">X</a></li></div>
 
+                <div><li><img src="../photo/_DSC3842-1.jpg" alt="" /><a href="#2">X</a></li></div>
+                <div><li><img src="../photo/_DSC3921-1.jpg" alt="" /><a href="#2">X</a></li></div>
+                <div><li><img src="../photo/_DSC3942-1.jpg" alt="" /><a href="#2">X</a></li></div>
+                <div><li><img src="../photo/_DSC3930-1.jpg" alt="" /><a href="#2">X</a></li></div>
+ -->
             <?php 
                 $username=$_SESSION['username'];
                 $conn = mysqli_connect('localhost','root','','bishe');
@@ -66,7 +68,7 @@
                 // 循环遍历输出用户所有照片
                 while ( $row=mysqli_fetch_array($result) ) {
 
-                    echo "<li><img src='".$row['photodir']."'/><a href='#2' id='".$row['photodir']."'>X</a></li>";
+                    echo "<div><li><img src='".$row['photodir']."'/><a href='#2' id='".$row['photodir']."'>X</a></li></div>";
                  }
              ?>
             </ul>

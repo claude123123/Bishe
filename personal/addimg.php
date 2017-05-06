@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/addimg.css" />
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/addimg.js"></script>
+    
 </head>
 <body>
     <div class="topbar">
