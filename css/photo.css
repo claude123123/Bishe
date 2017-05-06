@@ -79,7 +79,7 @@ header{
                                                
 }
 .photo-img ul div{
-    height:100px;
+    height:150px;
     flex-grow: 1;
 }
 .photo-img ul li{
