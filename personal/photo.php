@@ -85,7 +85,10 @@
                     $result2 = mysqli_query($conn,$sql2);
                     $row2=mysqli_fetch_array($result2);
                     echo "<div class='album-cover'> 
+                            <div>
+                                
                             <img src='".$row2['photodir']." '  />
+                            </div>
                             <p>".$row1['albumname']."</p><a href='#2' id='".$row1['albumdir']."' class='deleteicon'>X</a></div>";
                 }
 

@@ -38,7 +38,7 @@
         mysqli_close($conn);
         
     }   else{
-        echo json_encode("错误");
+        echo json_encode("密码不统一");
        
     }
 

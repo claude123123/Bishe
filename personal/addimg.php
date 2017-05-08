@@ -13,6 +13,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/addimg.css" />
@@ -31,7 +32,7 @@
         <label for="">是否共享到主页:<br />
         <span>是：</span><input type="radio" name="share" value="y" class="share" />
         <br />
-        <span>否：</span><input type="radio" name="share" value="n" class="share" /></label>
+        <span>否：</span><input type="radio" name="share" value="n" class="share" checked="checked" /></label>
         <select name="dealbum" id="dealbum">
             <?php 
                 $username=$_SESSION['username'];

@@ -62,12 +62,14 @@ label span{
 .red{
   background:red;
   color:white;
+  height:40vh;
 }
 .green{
   background:rgb(52, 192, 73);
   color:white;
+  height:40vh;
 }
-#goback{
+.goback{
   display:block;
   text-decoration: none;
   text-align: center;
@@ -79,9 +81,7 @@ label span{
   border:2px solid #019ae4;
   background:#019AE4;
   border-radius: 20px;
-  position:relative;
+  position:absolute;
   top:40%;
   margin:0 auto;
 }
-
-    

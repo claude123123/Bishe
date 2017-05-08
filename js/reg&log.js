@@ -10,7 +10,10 @@ $(document).ready(function(){
             });
 
             // 注册ajax
+            var passlen=$('#rpassword').val().length;
+
             $('#reg-btn').click(function() {
+                alert(passlen);
                 var cont = $('#reg-table input').serialize();
                 $.ajax({
                     url:"register-act.php",

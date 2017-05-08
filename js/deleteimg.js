@@ -3,11 +3,11 @@ $(document).ready(function(){
         $('#delete-act').click(function(){
             if( $('#delete-act').text()=="照片管理"){
                 if($('.ul-images li a').css('display')=='none'){
-                    $('.ul-images li img').css("height","80%");
+                    $('.ul-images li img').css("height","120px");
                     $('.ul-images li a').css('display','block');
                 }
                 else{
-                $('.ul-images li img').css("height","100%");
+                $('.ul-images li img').css("height","150px");
                 $('.ul-images li a').css('display','none');
                 }
             }
