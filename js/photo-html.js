@@ -26,7 +26,8 @@ $(document).ready(function(){
     });
     $('.ul-images').viewer();
     $('.img-container').viewer();
-   
+    $('.show-album-ul').viewer();
+    $('.show-album').hide();
     // // 上下滚动底部菜单隐藏
     // $(".photo-img").swipe({
     //     swipeUp:function(event,direction,duration,fingerCount,fingerData){

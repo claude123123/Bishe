@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/photo.css" />
         <link rel="stylesheet" href="../css/viewer.min.css" />
+        <link rel="stylesheet" href="../css/show-album.css" />
 
         <script src="../js/jquery-3.1.1.min.js"></script>
         <script src="../js/jquery.touchSwipe.min.js"></script>
@@ -87,7 +88,7 @@
                     echo "<div class='album-cover'> 
                             <div>
                                 
-                            <img src='".$row2['photodir']." '  />
+                            <img src='".$row2['photodir']." ' id='".$row1['albumname']."'  />
                             </div>
                             <p>".$row1['albumname']."</p><a href='#2' id='".$row1['albumdir']."' class='deleteicon'>X</a></div>";
                 }
@@ -110,6 +111,12 @@
             </div>
             
         </div>
+        <div class="show-album">
+            <p><a href="photo.php"><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></a></span>  返回</p>
+            <ul class="show-album-ul">
+                
+            </ul>
+        </div>
         <nav class="footer-nav">
             <div>
                 <a href="home.php"><span class="glyphicon glyphicon-home"></span></a>
@@ -118,5 +125,6 @@
             </div>
         </nav>
         <script src="../js/deleteimg.js"></script>
+        <script src="../js/show-album.js"></script>
     </body>
 </html>
